@@ -19,7 +19,7 @@ export default function Home() {
 
   function onSubmit(data){
     console.log(data)
-    router.push('/cep/${data.cep}')
+    router.push(`/cep/${data.cep}`)
   }
 
   return (
@@ -29,7 +29,7 @@ export default function Home() {
         <form className="flex flex-col gap-y-8 items-center" onSubmit={handleSubmit(onSubmit)}>
 
           <input type="text" className="w=1/2 p-2 rounded-lg text-center font-bold text-lg" {...register("cep")}></input>
-          
+
           {errors.cep && <p className="text-red-500 text-center font-bold">{(errors.cep.message)}</p>}
 
           <button type = "submit" className="bg-blue-700 px-8 py-3 rounded-lg font-bold text-white text-lg hover:bg-blue-800 transition-all duration-300 ease-in-out">Buscar</button>
